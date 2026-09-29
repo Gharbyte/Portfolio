@@ -1,0 +1,149 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A personal portfolio website for a computer engineering student.">
+  <title>Johannes Gharb | Computer Engineering</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="weather.js" defer></script>
+  <script src="contact.js" defer></script>
+  <script src="catalog-data.js" defer></script>
+  <script src="catalog.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Johannes Gharb - Home">JG<span>/</span><span class="brand-name">Johannes Gharb</span></a>
+    <div class="header-readout"><span>G&#214;TEBORG, SE</span><time data-stockholm-clock aria-label="Current time in G?teborg">--:--:--</time></div>
+  </header>
+
+  <main id="top">
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="portrait-panel">
+        <img src="assets/johannes-portrait.png" alt="Stippled portrait of Johannes Gharb" width="768" height="1364" fetchpriority="high">
+      </div>
+      <div class="about-intro">
+        <div class="intro-heading">
+          <p class="eyebrow">About me / Computer engineering</p>
+          <h1 id="about-title">Hi, I&#8217;m Johannes Gharb.</h1>
+          <p class="intro-description">A computer engineering student interested in building practical technology.</p>
+        </div>
+          <div class="about-facts">
+            <div class="about-fact" role="group" aria-labelledby="fact-01"><h2 id="fact-01"><span class="fact-index" aria-hidden="true">01</span>Studies</h2><p>Second-year Computer Engineering student.</p></div>
+            <div class="about-fact" role="group" aria-labelledby="fact-02"><h2 id="fact-02"><span class="fact-index" aria-hidden="true">02</span>Currently learning</h2><p>Building with Python and C++, and learning to use AI tools to prototype, review, and improve code.</p></div>
+            <div class="about-fact" role="group" aria-labelledby="fact-03"><h2 id="fact-03"><span class="fact-index" aria-hidden="true">03</span>What interests me</h2><p>Turning ideas into practical software that people can use.</p></div>
+          </div>
+      </div>
+    </section>
+
+    <div class="home-catalogs">
+      <section class="catalog-panel" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading"><h2 id="projects-title">Selected Projects</h2></div>
+        <div class="catalog-grid" data-project-preview><p class="catalog-fallback">Projects coming soon.</p></div>
+        <a class="catalog-footer" href="projects.html">All Projects <span aria-hidden="true">→</span></a>
+      </section>
+      <section class="catalog-panel" id="tools" aria-labelledby="tools-title">
+        <div class="section-heading"><h2 id="tools-title">Tech Stack</h2></div>
+        <div class="catalog-grid" data-tool-preview><p class="catalog-fallback">Enable JavaScript to view the tech stack.</p></div>
+        <a class="catalog-footer" href="tools.html">All Tools <span aria-hidden="true">→</span></a>
+      </section>
+    </div>
+    <section class="weather-panel" id="weather" data-weather="neutral" aria-labelledby="weather-title">
+      <div class="weather-copy">
+        <div><p class="eyebrow">Local weather</p><h2 id="weather-title">Göteborg</h2></div>
+        <p class="weather-summary" id="weather-summary" role="status" aria-live="polite">Weather requires JavaScript to load.</p>
+        <div class="weather-note">
+          <p id="weather-updated"></p>
+          <button id="weather-refresh" type="button" hidden>Refresh weather</button>
+        </div>
+      </div>
+      <!-- Original vector artwork. The adjacent sentence supplies its accessible description. -->
+      <div class="weather-art" aria-hidden="true">
+        <svg class="weather-canvas" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <pattern id="weather-dots" width="7" height="7" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.3" fill="currentColor"/>
+            </pattern>
+            <pattern id="weather-dense-dots" width="4" height="4" patternUnits="userSpaceOnUse">
+              <circle cx="1.5" cy="1.5" r="1.3" fill="currentColor"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" class="weather-paper"/>
+          <rect width="100%" height="100%" fill="url(#weather-dots)" opacity=".18"/>
+          <svg class="weather-scene" viewBox="0 0 800 320" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" focusable="false">
+          <g class="weather-symbol weather-sun">
+            <circle cx="465" cy="133" r="92" class="weather-sun-fill"/>
+            <circle cx="465" cy="133" r="76" fill="url(#weather-dots)" opacity=".35"/>
+            <circle cx="465" cy="133" r="113" fill="none" stroke="currentColor"/>
+            <path class="weather-rays" d="M465 18V8 M465 258V248 M350 133H330 M580 133H600 M384 52L372 40 M546 52L558 40 M384 214L372 226 M546 214L558 226" stroke="currentColor" stroke-width="3"/>
+          </g>
+          <g class="weather-symbol weather-night">
+            <path d="M499 40A91 91 0 1 0 565 191A100 100 0 0 1 499 40Z" fill="url(#weather-dense-dots)" stroke="currentColor"/>
+            <path d="M331 66v18m-9-9h18m241 13v18m-9-9h18m-192 80v14m-7-7h14" class="weather-accent-stroke" stroke-width="3"/>
+          </g>
+          <g class="weather-symbol weather-cloud-back">
+            <g transform="translate(205 -3) scale(.72)">
+              <path d="M250 180C195 180 195 112 248 110C249 48 337 32 369 90C409 47 480 69 483 119C550 98 588 180 525 180Z" class="weather-paper" stroke="currentColor"/>
+              <path d="M250 180C195 180 195 112 248 110C249 48 337 32 369 90C409 47 480 69 483 119C550 98 588 180 525 180Z" fill="url(#weather-dots)"/>
+            </g>
+          </g>
+          <g class="weather-symbol weather-cloud">
+            <path d="M250 180C195 180 195 112 248 110C249 48 337 32 369 90C409 47 480 69 483 119C550 98 588 180 525 180Z" class="weather-paper" stroke="currentColor" stroke-width="2"/>
+            <path d="M250 180C195 180 195 112 248 110C249 48 337 32 369 90C409 47 480 69 483 119C550 98 588 180 525 180Z" fill="url(#weather-dense-dots)"/>
+            <path d="M540 76h144M585 90h113" stroke="currentColor"/>
+          </g>
+          <g class="weather-symbol weather-rain" fill="none" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 4">
+            <path d="M270 211l-8 14"/>
+            <path d="M335 229l-8 14"/>
+            <path d="M400 207l-8 14"/>
+            <path d="M465 235l-8 14"/>
+            <path d="M530 217l-8 14"/>
+          </g>
+          <g class="weather-symbol weather-snow" stroke-width="2" stroke-linecap="round">
+            <path d="M270 208v12m-6-6h12m-10-10 8 8m-8 0 8-8"/>
+            <path d="M335 231v12m-6-6h12"/>
+            <path d="M400 208v12m-6-6h12m-10-10 8 8m-8 0 8-8"/>
+            <path d="M465 237v12m-6-6h12"/>
+            <path d="M530 218v12m-6-6h12m-10-10 8 8m-8 0 8-8"/>
+          </g>
+          <path class="weather-symbol weather-lightning weather-red" d="M416 162l-45 64h32l-18 49 67-74h-35l25-39Z"/>
+          <g class="weather-symbol weather-fog" stroke="currentColor" stroke-width="5">
+            <path d="M190 211h390m-350 22h420m-460 22h330"/>
+          </g>
+          <g class="weather-symbol weather-neutral" fill="none" stroke="currentColor">
+            <circle cx="400" cy="133" r="76" stroke-dasharray="2 7"/>
+            <path d="M380 133h40" class="weather-accent-stroke" stroke-width="4"/>
+          </g>
+          
+          <path d="M30 275h110m520 0h110" class="weather-accent-stroke" stroke-width="3"/>
+          </svg>
+          <line x1="0" y1="94%" x2="100%" y2="94%" stroke="currentColor" opacity=".5"/>
+          <line x1="0" y1="98%" x2="100%" y2="98%" stroke="currentColor" opacity=".5"/>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-heading"><p class="eyebrow">Contact</p><h2>Let’s make something useful.</h2></div>
+    <div class="contact-details">
+      <!-- Enter all real URLs and handles together at the top of contact.js. -->
+      <a class="contact-row" data-profile="github" href="https://github.com/Gharbyte">
+        <span class="contact-platform"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.6 9.6 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.39.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>GitHub</span>
+        <span class="contact-handle">@Gharbyte</span><span class="contact-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="contact-row" data-profile="linkedin" href="https://www.linkedin.com/in/johannes-g-865785352/">
+        <span class="contact-platform"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="1" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="7.5" cy="8" r="1.2" fill="currentColor"/><path d="M7.5 11v7m4-7v7m0-4c0-4 6-4 6 0v4" fill="none" stroke="currentColor" stroke-width="2"/></svg>LinkedIn</span>
+        <span class="contact-handle">Johannes Gharb</span><span class="contact-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="contact-row" data-profile="instagram" href="https://www.instagram.com/johannes.gha/?hl=en">
+        <span class="contact-platform"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</span>
+        <span class="contact-handle">johannes.gha</span><span class="contact-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+    <p class="contact-placeholder" id="contact-placeholder" tabindex="-1" hidden>Profile links are placeholders and are not configured yet.</p>
+  </footer>
+</body>
+</html>
+

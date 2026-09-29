@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <defs><linearGradient id="rail" x2="0" y2="1"><stop stop-color="#ecf0ed"/><stop offset=".45" stop-color="#b2c2c9"/><stop offset=".5" stop-color="#f2f5f4"/><stop offset="1" stop-color="#768f9d"/></linearGradient></defs>
+  <path fill="#1f282c" d="M0 0h640v400H0z"/>
+  <g stroke="#bddde9" opacity=".1"><path d="M32 0v400m64-400v400m64-400v400m64-400v400m64-400v400m64-400v400m64-400v400m64-400v400m64-400v400m64-400v400M0 80h640M0 144h640M0 208h640M0 272h640M0 336h640"/></g>
+  <rect x="32" y="42" width="576" height="304" stroke="#70828c"/>
+  <path fill="url(#rail)" d="M32 42h576v27H32z"/>
+  <g fill="#253238"><circle cx="48" cy="55" r="2"/><circle cx="58" cy="55" r="2"/><circle cx="68" cy="55" r="2"/></g>
+  <text x="94" y="59" font-family="monospace" font-size="10" fill="#253238" letter-spacing="1.5">DATA EXPLORATION / CONCEPT</text>
+  <g font-family="monospace" font-size="14">
+    <text x="52" y="104" fill="#bddde9">$ sketch --input sample</text>
+    <text x="52" y="133" fill="#99adb6">// illustrative data only</text>
+    <text x="52" y="176" fill="#e9eee9">01   acquire()</text>
+    <text x="52" y="202" fill="#e9eee9">02   transform()</text>
+    <text x="52" y="228" fill="#e9eee9">03   inspect()</text>
+    <text x="52" y="308" fill="#bddde9">&gt; awaiting a real project</text>
+  </g>
+  <path d="M355 120v133h225" stroke="#70828c"/>
+  <g fill="#bddde9"><path d="M371 217h13v28h-13zm27-43h13v71h-13zm27 15h13v56h-13zm27-49h13v105h-13zm27 22h13v83h-13zm27 43h13v40h-13zm27-69h13v109h-13zm27 30h13v79h-13z" opacity=".65"/></g>
+  <path d="M355 201h225" stroke="#e9eee9" stroke-dasharray="3 5" opacity=".4"/>
+  <rect x="294" y="297" width="8" height="14" fill="#bddde9"/>
+  <text x="34" y="374" fill="#99adb6" font-family="monospace" font-size="11" letter-spacing="1">SAMPLE SIGNAL / NO LIVE TELEMETRY</text>
+</svg>
